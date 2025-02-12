@@ -1,0 +1,76 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [uuidOssp(map: "uuid-ossp")]
+}
+
+model Climber {
+  id        String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt @default(now())
+  firstName String
+  lastName  String
+  age       Int
+  gender    Gender
+
+  successfulZones ClimbersToSuccessfulZones[]
+}
+
+model ClimbersToSuccessfulZones {
+  @@id([climberId, zoneId])
+  assignedAt DateTime @default(now())
+
+  user   Climber   @relation(fields: [climberId], references: [id])
+  climberId String @db.Uuid
+
+  zone   Zone   @relation(fields: [zoneId], references: [id])
+  zoneId String @db.Uuid
+}
+
+model CompetitionCategory {
+  @@unique([name, gender])
+  id     String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name   String
+  minAge Int
+  maxAge Int
+  gender Gender
+}
+
+enum Gender {
+  WOMAN
+  MAN
+  OTHER
+}
+
+model Route {
+  @@unique([name])
+  id   String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name String
+
+  wall   Wall   @relation(fields: [wallId], references: [id])
+  wallId String @db.Uuid
+  
+  zones Zone[]
+}
+
+model Wall {
+  id     String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  number Int
+  routes Route[]
+}
+
+model Zone {
+  @@unique([number, routeId])
+  id     String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  number Int
+
+  route   Route  @relation(fields: [routeId], references: [id])
+  routeId String @db.Uuid
+
+  successfulClimbers ClimbersToSuccessfulZones[]
+}
