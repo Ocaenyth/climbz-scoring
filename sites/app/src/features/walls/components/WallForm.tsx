@@ -36,9 +36,9 @@ export const WallForm = ({ onSubmit, defaultValues }: WallFormProps) => {
           name="number"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Number</FormLabel>
+              <FormLabel>Numéro</FormLabel>
               <FormControl>
-                <Input placeholder="number" type="number" {...field} />
+                <Input placeholder="numéro" type="number" {...field} />
               </FormControl>
               <FormDescription />
               <FormMessage />
@@ -46,7 +46,7 @@ export const WallForm = ({ onSubmit, defaultValues }: WallFormProps) => {
           )}
         />
         <Button type="submit" disabled={form.formState.isSubmitting}>
-          Save
+          Enregistrer
         </Button>
       </form>
     </Form>

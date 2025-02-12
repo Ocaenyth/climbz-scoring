@@ -32,9 +32,9 @@ export const UpdateWallSheet = ({ wall }: UpdateWallSheetProps) => {
           }
         ),
         {
-          loading: "Saving in progress",
-          success: "Wall successfully updated",
-          error: "Error while creating wall",
+          loading: "Modification en cours...",
+          success: "Couloir bien modifié !",
+          error: "Une erreur est survenue en modifiant un.e participant.e",
         }
       )
       .unwrap();

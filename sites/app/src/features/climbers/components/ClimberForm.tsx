@@ -28,9 +28,6 @@ const resolver = zodResolver(climberFormSchema);
 export const ClimberForm = ({ onSubmit, defaultValues }: ClimberFormProps) => {
   const form = useForm<ClimberFormValues>({ defaultValues, resolver });
 
-  console.log("defaultValues");
-  console.log(defaultValues);
-  console.log("defaultValues");
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -78,9 +75,9 @@ export const ClimberForm = ({ onSubmit, defaultValues }: ClimberFormProps) => {
           name="gender"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Gender {defaultValues?.gender}</FormLabel>
+              <FormLabel>Genre</FormLabel>
               <GenderSelect
-                myField={field}
+                field={field}
                 defaultValue={defaultValues?.gender}
               />
               <FormMessage />
@@ -88,7 +85,7 @@ export const ClimberForm = ({ onSubmit, defaultValues }: ClimberFormProps) => {
           )}
         />
         <Button type="submit" disabled={form.formState.isSubmitting}>
-          Save
+          Enregistrer
         </Button>
       </form>
     </Form>

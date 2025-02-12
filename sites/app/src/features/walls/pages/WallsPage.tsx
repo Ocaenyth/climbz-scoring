@@ -23,7 +23,7 @@ const columns: ColumnDef<Wall>[] = [
       return (
         <div className="flex flex-row gap-1.5">
           <UpdateWallSheet wall={original}></UpdateWallSheet>
-          <DeleteWallButton id={original.id} />
+          <DeleteWallButton wall={original} />
         </div>
       );
     },

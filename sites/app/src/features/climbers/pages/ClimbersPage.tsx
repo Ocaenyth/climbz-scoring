@@ -43,7 +43,7 @@ const columns: ColumnDef<Climber>[] = [
       return (
         <div className="flex flex-row gap-1.5">
           <UpdateClimberSheet climber={original}></UpdateClimberSheet>
-          <DeleteClimberButton id={original.id} />
+          <DeleteClimberButton climber={original} />
         </div>
       );
     },
@@ -57,7 +57,6 @@ export const ClimbersPage = () => {
     data && (
       <div>
         <HomeButton />
-
         <CreateClimberSheet />
         <div className="container mx-auto py-10">
           <DataTable columns={columns} data={data} />

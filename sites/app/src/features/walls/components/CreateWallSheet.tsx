@@ -23,9 +23,9 @@ export const CreateWallSheet = () => {
           },
         }),
         {
-          loading: "Saving in progress",
-          success: "Wall successfully created",
-          error: "Error while creating wall",
+          loading: "Ajout en cours...",
+          success: "Couloir ajouté !",
+          error: "Erreur lors de la création du couloir",
         }
       )
       .unwrap();

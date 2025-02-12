@@ -6,15 +6,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { GenderEnum } from "../dto/Gender";
+import { Gender, GenderEnum } from "../dto/Gender";
 
-export const GenderSelect = (myField: any, defaultValue: any) => {
-  console.log("gender");
-  console.log(defaultValue);
-  console.log(myField);
-  console.log("gender");
+export interface GenderSelectProps {
+  field: any;
+  defaultValue?: Gender;
+}
+
+export const GenderSelect = ({ field, defaultValue }: GenderSelectProps) => {
   return (
-    <Select onValueChange={myField.onChange} defaultValue={myField.value}>
+    <Select onValueChange={field.onChange} defaultValue={field.value}>
       <FormControl>
         <SelectTrigger>
           <SelectValue placeholder="Choisissez un genre" />

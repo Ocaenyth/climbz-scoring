@@ -32,9 +32,9 @@ export const UpdateClimberSheet = ({ climber }: UpdateClimberSheetProps) => {
           }
         ),
         {
-          loading: "Sauvegarde en cours...",
-          success: "Participant.e bien mis.e à jour !",
-          error: "Une erreur est survenue en mettant à jour un.e participant.e",
+          loading: "Modification en cours...",
+          success: "Participant.e bien modifié.e !",
+          error: "Une erreur est survenue en modifiant un.e participant.e",
         }
       )
       .unwrap();
