@@ -39,7 +39,12 @@ export const RouteForm = ({ onSubmit, defaultValues }: RouteFormProps) => {
             <FormItem>
               <FormLabel>Nom de la voie</FormLabel>
               <FormControl>
-                <Input placeholder="Nom de la voie" type="string" {...field} />
+                <Input
+                  autoComplete="off"
+                  placeholder="Nom de la voie"
+                  type="string"
+                  {...field}
+                />
               </FormControl>
               <FormDescription />
               <FormMessage />

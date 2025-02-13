@@ -1,9 +1,10 @@
+import { Wall } from "@/features/wall/dto/Wall";
 import { z } from "zod";
 
 export interface Route {
   id: string;
   name: string;
-  // wall
+  wall: Wall;
   // zones
 }
 

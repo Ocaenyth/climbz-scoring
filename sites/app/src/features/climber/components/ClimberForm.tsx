@@ -38,7 +38,12 @@ export const ClimberForm = ({ onSubmit, defaultValues }: ClimberFormProps) => {
             <FormItem>
               <FormLabel>Prénom</FormLabel>
               <FormControl>
-                <Input placeholder="Prénom" type="string" {...field} />
+                <Input
+                  autoComplete="off"
+                  placeholder="Prénom"
+                  type="string"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -51,7 +56,12 @@ export const ClimberForm = ({ onSubmit, defaultValues }: ClimberFormProps) => {
             <FormItem>
               <FormLabel>Nom de famille</FormLabel>
               <FormControl>
-                <Input placeholder="Nom de famille" type="string" {...field} />
+                <Input
+                  autoComplete="off"
+                  placeholder="Nom de famille"
+                  type="string"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -64,7 +74,12 @@ export const ClimberForm = ({ onSubmit, defaultValues }: ClimberFormProps) => {
             <FormItem>
               <FormLabel>Âge</FormLabel>
               <FormControl>
-                <Input placeholder="Âge" type="string" {...field} />
+                <Input
+                  autoComplete="off"
+                  placeholder="Âge"
+                  type="string"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

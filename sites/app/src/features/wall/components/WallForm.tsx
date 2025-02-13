@@ -38,7 +38,12 @@ export const WallForm = ({ onSubmit, defaultValues }: WallFormProps) => {
             <FormItem>
               <FormLabel>Numéro</FormLabel>
               <FormControl>
-                <Input placeholder="numéro" type="number" {...field} />
+                <Input
+                  autoComplete="off"
+                  placeholder="numéro"
+                  type="number"
+                  {...field}
+                />
               </FormControl>
               <FormDescription />
               <FormMessage />

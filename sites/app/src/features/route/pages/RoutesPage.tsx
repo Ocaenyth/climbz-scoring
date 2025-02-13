@@ -17,6 +17,12 @@ const columns: ColumnDef<Route>[] = [
     header: "Nom",
   },
   {
+    accessorFn: (route) => {
+      return route.wall.number;
+    },
+    header: "Couloir",
+  },
+  {
     id: "actions",
     header: "Actions",
     cell: ({ row: { original } }) => {
