@@ -1,3 +1,4 @@
+import { AcceptDeletionButton } from "@/components/AcceptDeletionButton";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -33,9 +34,7 @@ export const DeleteWallButton = ({ wall }: DeleteWallButtonProps) => {
             Cette action ne peut pas être annulée, et le couloir {wall.number}
             sera définitivement supprimé
           </DialogDescription>
-          <Button variant="destructive" onClick={() => mutate(wall.id)}>
-            Oui
-          </Button>
+          <AcceptDeletionButton onClick={async () => mutate(wall.id)} />
         </DialogHeader>
       </DialogContent>
     </Dialog>

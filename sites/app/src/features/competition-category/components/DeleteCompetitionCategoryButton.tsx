@@ -1,3 +1,4 @@
+import { AcceptDeletionButton } from "@/components/AcceptDeletionButton";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -39,12 +40,9 @@ export const DeleteCompetitionCategoryButton = ({
             {competitionCategory.minAge} - {competitionCategory.maxAge}) sera
             définitivement supprimée
           </DialogDescription>
-          <Button
-            variant="destructive"
-            onClick={() => mutate(competitionCategory.id)}
-          >
-            Oui
-          </Button>
+          <AcceptDeletionButton
+            onClick={async () => mutate(competitionCategory.id)}
+          />
         </DialogHeader>
       </DialogContent>
     </Dialog>

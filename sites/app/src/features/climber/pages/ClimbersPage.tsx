@@ -9,32 +9,32 @@ import { useClimbers } from "../hooks/useClimbers";
 
 const columns: ColumnDef<Climber>[] = [
   {
-    accessorKey: "id",
     header: "ID",
+    accessorKey: "id",
   },
   {
-    accessorKey: "createdAt",
     header: "Crée le",
+    accessorKey: "createdAt",
   },
   {
-    accessorKey: "updatedAt",
     header: "Modifié le",
+    accessorKey: "updatedAt",
   },
   {
-    accessorKey: "firstName",
     header: "Prénom",
+    accessorKey: "firstName",
   },
   {
-    accessorKey: "lastName",
     header: "Nom de famille",
+    accessorKey: "lastName",
   },
   {
-    accessorKey: "age",
     header: "Âge",
+    accessorKey: "age",
   },
   {
-    accessorKey: "gender",
     header: "Genre",
+    accessorKey: "gender",
   },
   {
     id: "actions",

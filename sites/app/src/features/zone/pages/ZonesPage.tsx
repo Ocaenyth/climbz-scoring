@@ -9,12 +9,12 @@ import { useZones } from "../hooks/useZones";
 
 const columns: ColumnDef<Zone>[] = [
   {
-    accessorKey: "id",
     header: "ID",
+    accessorKey: "id",
   },
   {
-    accessorKey: "number",
     header: "Numéro",
+    accessorKey: "number",
   },
   {
     id: "actions",

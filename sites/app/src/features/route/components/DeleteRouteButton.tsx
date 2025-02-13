@@ -1,3 +1,4 @@
+import { AcceptDeletionButton } from "@/components/AcceptDeletionButton";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -33,9 +34,7 @@ export const DeleteRouteButton = ({ route }: DeleteRouteButtonProps) => {
             Cette action ne peut pas être annulée, et la voie {route.name}
             sera définitivement supprimée
           </DialogDescription>
-          <Button variant="destructive" onClick={() => mutate(route.id)}>
-            Oui
-          </Button>
+          <AcceptDeletionButton onClick={async () => mutate(route.id)} />
         </DialogHeader>
       </DialogContent>
     </Dialog>

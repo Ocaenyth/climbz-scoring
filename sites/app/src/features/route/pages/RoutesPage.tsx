@@ -9,18 +9,24 @@ import { useRoutes } from "../hooks/useRoutes";
 
 const columns: ColumnDef<Route>[] = [
   {
-    accessorKey: "id",
     header: "ID",
+    accessorKey: "id",
   },
   {
-    accessorKey: "name",
     header: "Nom",
+    accessorKey: "name",
   },
   {
+    header: "Couloir",
     accessorFn: (route) => {
       return route.wall.number;
     },
-    header: "Couloir",
+  },
+  {
+    header: "Nombre de zones",
+    accessorFn: (route) => {
+      return route.zones.length;
+    },
   },
   {
     id: "actions",

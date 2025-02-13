@@ -1,3 +1,4 @@
+import { AcceptDeletionButton } from "@/components/AcceptDeletionButton";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -35,9 +36,7 @@ export const DeleteClimberButton = ({ climber }: DeleteClimberButtonProps) => {
             {climber.firstName} {climber.lastName} sera définitivement
             supprimé.e
           </DialogDescription>
-          <Button variant="destructive" onClick={() => mutate(climber.id)}>
-            Oui
-          </Button>
+          <AcceptDeletionButton onClick={async () => mutate(climber.id)} />
         </DialogHeader>
       </DialogContent>
     </Dialog>

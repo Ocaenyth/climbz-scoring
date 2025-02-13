@@ -9,12 +9,12 @@ import { useWalls } from "../hooks/useWalls";
 
 const columns: ColumnDef<Wall>[] = [
   {
-    accessorKey: "id",
     header: "ID",
+    accessorKey: "id",
   },
   {
-    accessorKey: "number",
     header: "Numéro",
+    accessorKey: "number",
   },
   {
     id: "actions",

@@ -9,22 +9,22 @@ import { useCompetitionCategories } from "../hooks/useCompetitionCategories";
 
 const columns: ColumnDef<CompetitionCategory>[] = [
   {
-    accessorKey: "id",
     header: "ID",
+    accessorKey: "id",
   },
   {
-    accessorKey: "name",
     header: "Nom",
+    accessorKey: "name",
   },
   {
+    header: "Tranche d'âge",
     accessorFn: (competitionCategory: CompetitionCategory) => {
       return `${competitionCategory.minAge} - ${competitionCategory.maxAge}`;
     },
-    header: "Tranche d'âge",
   },
   {
-    accessorKey: "gender",
     header: "Genre",
+    accessorKey: "gender",
   },
   {
     id: "actions",

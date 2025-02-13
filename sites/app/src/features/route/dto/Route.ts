@@ -1,11 +1,12 @@
 import { Wall } from "@/features/wall/dto/Wall";
+import { Zone } from "@/features/zone/dto/Zone";
 import { z } from "zod";
 
 export interface Route {
   id: string;
   name: string;
+  zones: Zone[];
   wall: Wall;
-  // zones
 }
 
 export const createRouteSchema = z.object({

@@ -1,3 +1,4 @@
+import { AcceptDeletionButton } from "@/components/AcceptDeletionButton";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -33,9 +34,7 @@ export const DeleteZoneButton = ({ zone }: DeleteZoneButtonProps) => {
             Cette action ne peut pas être annulée, et la zone {zone.number}
             sera définitivement supprimé
           </DialogDescription>
-          <Button variant="destructive" onClick={() => mutate(zone.id)}>
-            Oui
-          </Button>
+          <AcceptDeletionButton onClick={async () => mutate(zone.id)} />
         </DialogHeader>
       </DialogContent>
     </Dialog>
