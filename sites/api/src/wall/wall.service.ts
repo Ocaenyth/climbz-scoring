@@ -2,37 +2,37 @@ import { Injectable } from '@nestjs/common';
 import { prisma } from 'src/prisma/client';
 import { CreateWallDto } from './dto/create-wall.dto';
 import { UpdateWallDto } from './dto/update-wall.dto';
-import { wallsSelect } from './walls.select';
+import { wallSelect } from './wall.select';
 
 @Injectable()
-export class WallsService {
+export class WallService {
   create(createWallDto: CreateWallDto) {
-    return prisma.wall.create({ select: wallsSelect, data: createWallDto });
+    return prisma.wall.create({ select: wallSelect, data: createWallDto });
   }
 
   findAll() {
     return prisma.wall.findMany({
-      select: wallsSelect,
+      select: wallSelect,
       orderBy: { number: 'asc' },
     });
   }
 
   findOne(id: string) {
     return prisma.wall.findUniqueOrThrow({
-      select: wallsSelect,
+      select: wallSelect,
       where: { id },
     });
   }
 
   update(id: string, updateWallDto: UpdateWallDto) {
     return prisma.wall.update({
-      select: wallsSelect,
+      select: wallSelect,
       where: { id },
       data: updateWallDto,
     });
   }
 
   remove(id: string) {
-    return prisma.wall.delete({ select: wallsSelect, where: { id } });
+    return prisma.wall.delete({ select: wallSelect, where: { id } });
   }
 }

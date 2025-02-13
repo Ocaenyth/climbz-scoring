@@ -4,7 +4,7 @@ import { CreateRouteDto } from './dto/create-route.dto';
 import { UpdateRouteDto } from './dto/update-route.dto';
 
 @Injectable()
-export class RoutesService {
+export class RouteService {
   create(createRouteDto: CreateRouteDto) {
     return prisma.route.create({ data: createRouteDto });
   }

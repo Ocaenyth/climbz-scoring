@@ -9,11 +9,11 @@ import {
 } from '@nestjs/common';
 import { CreateZoneDto } from './dto/create-zone.dto';
 import { UpdateZoneDto } from './dto/update-zone.dto';
-import { ZonesService } from './zones.service';
+import { ZoneService } from './zone.service';
 
 @Controller('zones')
-export class ZonesController {
-  constructor(private readonly zonesService: ZonesService) {}
+export class ZoneController {
+  constructor(private readonly zonesService: ZoneService) {}
 
   @Post()
   create(@Body() createZoneDto: CreateZoneDto) {

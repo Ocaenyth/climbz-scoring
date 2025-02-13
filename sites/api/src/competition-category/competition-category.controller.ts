@@ -7,14 +7,14 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { CompetitionCategoriesService } from './competition-categories.service';
+import { CompetitionCategoryService } from './competition-category.service';
 import { CreateCompetitionCategoryDto } from './dto/create-competition-category.dto';
 import { UpdateCompetitionCategoryDto } from './dto/update-competition-category.dto';
 
 @Controller('competition-categories')
-export class CompetitionCategoriesController {
+export class CompetitionCategoryController {
   constructor(
-    private readonly competitionCategoriesService: CompetitionCategoriesService,
+    private readonly competitionCategoriesService: CompetitionCategoryService,
   ) {}
 
   @Post()

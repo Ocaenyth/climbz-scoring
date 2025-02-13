@@ -4,7 +4,7 @@ import { CreateCompetitionCategoryDto } from './dto/create-competition-category.
 import { UpdateCompetitionCategoryDto } from './dto/update-competition-category.dto';
 
 @Injectable()
-export class CompetitionCategoriesService {
+export class CompetitionCategoryService {
   create(createCompetitionCategoryDto: CreateCompetitionCategoryDto) {
     return prisma.competitionCategory.create({
       data: createCompetitionCategoryDto,

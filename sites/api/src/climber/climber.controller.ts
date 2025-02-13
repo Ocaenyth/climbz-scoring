@@ -7,13 +7,13 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { ClimbersService } from './climbers.service';
+import { ClimberService } from './climber.service';
 import { CreateClimberDto } from './dto/create-climber.dto';
 import { UpdateClimberDto } from './dto/update-climber.dto';
 
 @Controller('climbers')
-export class ClimbersController {
-  constructor(private readonly climbersService: ClimbersService) {}
+export class ClimberController {
+  constructor(private readonly climbersService: ClimberService) {}
 
   @Post()
   create(@Body() createClimberDto: CreateClimberDto) {

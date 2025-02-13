@@ -4,7 +4,7 @@ import { CreateZoneDto } from './dto/create-zone.dto';
 import { UpdateZoneDto } from './dto/update-zone.dto';
 
 @Injectable()
-export class ZonesService {
+export class ZoneService {
   create(createZoneDto: CreateZoneDto) {
     return prisma.zone.create({ data: createZoneDto });
   }

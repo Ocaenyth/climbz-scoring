@@ -1,20 +1,20 @@
 import { Module } from '@nestjs/common';
-import { ClimbersModule } from './climbers/climbers.module';
-import { CompetitionCategoriesModule } from './competition-categories/competition-categories.module';
-import { RoutesModule } from './routes/routes.module';
-import { WallsModule } from './walls/walls.module';
-import { ZonesModule } from './zones/zones.module';
+import { ClimberModule } from './climber/climber.module';
+import { CompetitionCategoryModule } from './competition-category/competition-category.module';
+import { RouteModule } from './route/route.module';
 import { StatsController } from './stats/stats.controller';
-import { StatsService } from './stats/stats.service';
 import { StatsModule } from './stats/stats.module';
+import { StatsService } from './stats/stats.service';
+import { WallModule } from './wall/wall.module';
+import { ZoneModule } from './zone/zone.module';
 
 @Module({
   imports: [
-    ZonesModule,
-    RoutesModule,
-    CompetitionCategoriesModule,
-    WallsModule,
-    ClimbersModule,
+    ZoneModule,
+    RouteModule,
+    CompetitionCategoryModule,
+    WallModule,
+    ClimberModule,
     StatsModule,
   ],
   controllers: [StatsController],

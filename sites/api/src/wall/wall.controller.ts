@@ -9,11 +9,11 @@ import {
 } from '@nestjs/common';
 import { CreateWallDto } from './dto/create-wall.dto';
 import { UpdateWallDto } from './dto/update-wall.dto';
-import { WallsService } from './walls.service';
+import { WallService } from './wall.service';
 
 @Controller('walls')
-export class WallsController {
-  constructor(private readonly wallsService: WallsService) {}
+export class WallController {
+  constructor(private readonly wallsService: WallService) {}
 
   @Post()
   create(@Body() createWallDto: CreateWallDto) {

@@ -9,11 +9,11 @@ import {
 } from '@nestjs/common';
 import { CreateRouteDto } from './dto/create-route.dto';
 import { UpdateRouteDto } from './dto/update-route.dto';
-import { RoutesService } from './routes.service';
+import { RouteService } from './route.service';
 
 @Controller('routes')
-export class RoutesController {
-  constructor(private readonly routesService: RoutesService) {}
+export class RouteController {
+  constructor(private readonly routesService: RouteService) {}
 
   @Post()
   create(@Body() createRouteDto: CreateRouteDto) {

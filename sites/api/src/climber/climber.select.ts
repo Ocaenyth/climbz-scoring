@@ -1,6 +1,6 @@
 import { Prisma } from '@prisma/client';
 
-export const climbersSelect = {
+export const climberSelect = {
   id: true,
   firstName: true,
   lastName: true,
