@@ -12,7 +12,9 @@ export class CompetitionCategoryService {
   }
 
   findAll() {
-    return prisma.competitionCategory.findMany();
+    return prisma.competitionCategory.findMany({
+      orderBy: [{ minAge: 'asc' }, { name: 'asc' }, { id: 'asc' }],
+    });
   }
 
   findOne(id: string) {

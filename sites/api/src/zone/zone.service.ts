@@ -10,7 +10,13 @@ export class ZoneService {
   }
 
   findAll() {
-    return prisma.zone.findMany();
+    return prisma.zone.findMany({
+      orderBy: [
+        { route: { wall: { number: 'asc' } } },
+        { number: 'asc' },
+        { id: 'asc' },
+      ],
+    });
   }
 
   findOne(id: string) {

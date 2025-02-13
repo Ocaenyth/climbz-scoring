@@ -13,7 +13,7 @@ export class WallService {
   findAll() {
     return prisma.wall.findMany({
       select: wallSelect,
-      orderBy: { number: 'asc' },
+      orderBy: [{ number: 'asc' }, { id: 'asc' }],
     });
   }
 

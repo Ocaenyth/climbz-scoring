@@ -14,7 +14,10 @@ export class ClimberService {
   }
 
   findAll() {
-    return prisma.climber.findMany({ select: climberSelect });
+    return prisma.climber.findMany({
+      select: climberSelect,
+      orderBy: [{ age: 'asc' }, { firstName: 'asc' }, { id: 'asc' }],
+    });
   }
 
   findOne(id: string) {

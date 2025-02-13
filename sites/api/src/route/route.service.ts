@@ -11,7 +11,10 @@ export class RouteService {
   }
 
   findAll() {
-    return prisma.route.findMany({ select: routeSelect });
+    return prisma.route.findMany({
+      select: routeSelect,
+      orderBy: [{ wall: { number: 'asc' } }, { name: 'asc' }, { id: 'asc' }],
+    });
   }
 
   findOne(id: string) {
