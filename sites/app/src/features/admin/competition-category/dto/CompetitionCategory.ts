@@ -1,4 +1,4 @@
-import { Gender, GenderEnum } from "@/features/climber/dto/Gender";
+import { Gender, GenderEnum } from "@/features/admin/climber/dto/Gender";
 import { z } from "zod";
 
 export interface CompetitionCategory {

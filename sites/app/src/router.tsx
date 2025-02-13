@@ -1,16 +1,17 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
+import { HomePage } from "./components/HomePage";
+import { ClimbersPage } from "./features/admin/climber/pages/ClimbersPage";
+import { CompetitionCategoriesPage } from "./features/admin/competition-category/pages/CompetitionCategoriesPage";
 import { AdminPage } from "./features/admin/pages/AdminPage";
-import { ClimbersPage } from "./features/climber/pages/ClimbersPage";
-import { CompetitionCategoriesPage } from "./features/competition-category/pages/CompetitionCategoriesPage";
-import { RoutesPage } from "./features/route/pages/RoutesPage";
-import { WallsPage } from "./features/wall/pages/WallsPage";
-import { ZonesPage } from "./features/zone/pages/ZonesPage";
+import { RoutesPage } from "./features/admin/route/pages/RoutesPage";
+import { WallsPage } from "./features/admin/wall/pages/WallsPage";
+import { ZonesPage } from "./features/admin/zone/pages/ZonesPage";
 
 export const router = createBrowserRouter([
   // Home
   {
     path: "/",
-    element: <ClimbersPage />,
+    element: <HomePage />,
   },
   // Admin side
   {

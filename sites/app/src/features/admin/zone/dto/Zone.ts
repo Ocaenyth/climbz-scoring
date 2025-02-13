@@ -1,4 +1,4 @@
-import { Route } from "@/features/route/dto/Route";
+import { Route } from "@/features/admin/route/dto/Route";
 import { z } from "zod";
 
 export interface Zone {
