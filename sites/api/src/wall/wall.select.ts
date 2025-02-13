@@ -1,11 +1,15 @@
 import { Prisma } from '@prisma/client';
-import { routeSelect } from 'src/route/route.select';
+import { routeSummarySelect } from 'src/route/route.select';
 
-export const wallSelect = {
+export const wallSummarySelect = {
   id: true,
   number: true,
+} satisfies Prisma.WallSelect;
+
+export const wallSelect = {
+  ...wallSummarySelect,
   routes: {
-    select: routeSelect,
+    select: routeSummarySelect,
     orderBy: [{ name: 'asc' }, { id: 'asc' }],
   },
 } satisfies Prisma.WallSelect;

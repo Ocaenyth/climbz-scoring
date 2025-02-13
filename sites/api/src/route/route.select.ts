@@ -1,10 +1,14 @@
 import { Prisma } from '@prisma/client';
-import { wallSelect } from 'src/wall/wall.select';
-import { zoneSelect } from 'src/zone/zone.select';
+import { wallSummarySelect } from 'src/wall/wall.select';
+import { zoneSummarySelect } from 'src/zone/zone.select';
 
-export const routeSelect = {
+export const routeSummarySelect = {
   id: true,
   name: true,
-  zones: { select: zoneSelect },
-  wall: { select: wallSelect },
+} satisfies Prisma.RouteSelect;
+
+export const routeSelect = {
+  ...routeSummarySelect,
+  zones: { select: zoneSummarySelect },
+  wall: { select: wallSummarySelect },
 } satisfies Prisma.RouteSelect;
