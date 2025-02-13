@@ -1,7 +1,7 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
-import { ClimbersPage } from "./features/climbers/pages/ClimbersPage";
-import { RoutesPage } from "./features/routes/pages/RoutesPage";
-import { WallsPage } from "./features/walls/pages/WallsPage";
+import { ClimbersPage } from "./features/climber/pages/ClimbersPage";
+import { RoutesPage } from "./features/route/pages/RoutesPage";
+import { WallsPage } from "./features/wall/pages/WallsPage";
 
 export const router = createBrowserRouter([
   // Home

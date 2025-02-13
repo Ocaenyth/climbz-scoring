@@ -9,7 +9,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { WallSelect } from "@/features/walls/components/WallSelect";
+import { WallSelect } from "@/features/wall/components/WallSelect";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { DefaultValues, SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
