@@ -1,4 +1,5 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
+import { AdminPage } from "./features/admin/pages/AdminPage";
 import { ClimbersPage } from "./features/climber/pages/ClimbersPage";
 import { CompetitionCategoriesPage } from "./features/competition-category/pages/CompetitionCategoriesPage";
 import { RoutesPage } from "./features/route/pages/RoutesPage";
@@ -11,24 +12,29 @@ export const router = createBrowserRouter([
     path: "/",
     element: <ClimbersPage />,
   },
+  // Admin side
   {
-    path: "/climbers",
+    path: "/privAdmin",
+    element: <AdminPage />,
+  },
+  {
+    path: "/privAdmin/climbers",
     element: <ClimbersPage />,
   },
   {
-    path: "/competition-categories",
+    path: "/privAdmin/competition-categories",
     element: <CompetitionCategoriesPage />,
   },
   {
-    path: "/routes",
+    path: "/privAdmin/routes",
     element: <RoutesPage />,
   },
   {
-    path: "/walls",
+    path: "/privAdmin/walls",
     element: <WallsPage />,
   },
   {
-    path: "/zones",
+    path: "/privAdmin/zones",
     element: <ZonesPage />,
   },
   // 404 redirect

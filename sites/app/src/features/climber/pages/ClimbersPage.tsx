@@ -1,4 +1,4 @@
-import { HomeButton } from "@/components/HomeButton";
+import { AdminHomeButton } from "@/components/AdminHomeButton";
 import { DataTable } from "@/components/ui/data-table";
 import { ColumnDef } from "@tanstack/react-table";
 import { CreateClimberSheet } from "../components/CreateClimberSheet";
@@ -55,7 +55,7 @@ export const ClimbersPage = () => {
   const { data } = useClimbers();
   return (
     <div>
-      <HomeButton />
+      <AdminHomeButton />
       <CreateClimberSheet />
       {data && (
         <div className="container mx-auto py-10">

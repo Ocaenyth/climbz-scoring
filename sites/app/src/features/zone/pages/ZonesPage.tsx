@@ -1,4 +1,4 @@
-import { HomeButton } from "@/components/HomeButton";
+import { AdminHomeButton } from "@/components/AdminHomeButton";
 import { DataTable } from "@/components/ui/data-table";
 import { ColumnDef } from "@tanstack/react-table";
 import { CreateZoneSheet } from "../components/CreateZoneSheet";
@@ -35,7 +35,7 @@ export const ZonesPage = () => {
   const { data } = useZones();
   return (
     <div>
-      <HomeButton />
+      <AdminHomeButton />
       <CreateZoneSheet />
       {data && (
         <div className="container mx-auto py-10">

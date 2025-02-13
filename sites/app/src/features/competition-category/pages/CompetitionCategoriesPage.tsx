@@ -1,4 +1,4 @@
-import { HomeButton } from "@/components/HomeButton";
+import { AdminHomeButton } from "@/components/AdminHomeButton";
 import { DataTable } from "@/components/ui/data-table";
 import { ColumnDef } from "@tanstack/react-table";
 import { CreateCompetitionCategorySheet } from "../components/CreateCompetitionCategorySheet";
@@ -47,7 +47,7 @@ export const CompetitionCategoriesPage = () => {
   const { data } = useCompetitionCategories();
   return (
     <div>
-      <HomeButton />
+      <AdminHomeButton />
       <CreateCompetitionCategorySheet />
       {data && (
         <div className="container mx-auto py-10">

@@ -1,4 +1,4 @@
-import { HomeButton } from "@/components/HomeButton";
+import { AdminHomeButton } from "@/components/AdminHomeButton";
 import { DataTable } from "@/components/ui/data-table";
 import { ColumnDef } from "@tanstack/react-table";
 import { CreateWallSheet } from "../components/CreateWallSheet";
@@ -35,7 +35,7 @@ export const WallsPage = () => {
   const { data } = useWalls();
   return (
     <div>
-      <HomeButton />
+      <AdminHomeButton />
       <CreateWallSheet />
       {data && (
         <div className="container mx-auto py-10">
