@@ -54,14 +54,14 @@ const columns: ColumnDef<Climber>[] = [
 export const ClimbersPage = () => {
   const { data } = useClimbers();
   return (
-    data && (
-      <div>
-        <HomeButton />
-        <CreateClimberSheet />
+    <div>
+      <HomeButton />
+      <CreateClimberSheet />
+      {data && (
         <div className="container mx-auto py-10">
           <DataTable columns={columns} data={data} />
         </div>
-      </div>
-    )
+      )}
+    </div>
   );
 };

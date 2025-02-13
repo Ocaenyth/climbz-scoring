@@ -40,14 +40,14 @@ const columns: ColumnDef<Route>[] = [
 export const RoutesPage = () => {
   const { data } = useRoutes();
   return (
-    data && (
-      <div>
-        <HomeButton />
-        <CreateRouteSheet />
+    <div>
+      <HomeButton />
+      <CreateRouteSheet />
+      {data && (
         <div className="container mx-auto py-10">
           <DataTable columns={columns} data={data} />
         </div>
-      </div>
-    )
+      )}
+    </div>
   );
 };

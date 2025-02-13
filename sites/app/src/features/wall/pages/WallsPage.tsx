@@ -34,14 +34,14 @@ const columns: ColumnDef<Wall>[] = [
 export const WallsPage = () => {
   const { data } = useWalls();
   return (
-    data && (
-      <div>
-        <HomeButton />
-        <CreateWallSheet />
+    <div>
+      <HomeButton />
+      <CreateWallSheet />
+      {data && (
         <div className="container mx-auto py-10">
           <DataTable columns={columns} data={data} />
         </div>
-      </div>
-    )
+      )}
+    </div>
   );
 };

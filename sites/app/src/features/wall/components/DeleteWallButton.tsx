@@ -30,7 +30,7 @@ export const DeleteWallButton = ({ wall }: DeleteWallButtonProps) => {
             Êtes-vous sûr.e de vouloir supprimer le couloir {wall.number} ?
           </DialogTitle>
           <DialogDescription>
-            Cette action ne peut pas être annulée, et le couloir {wall.number}{" "}
+            Cette action ne peut pas être annulée, et le couloir {wall.number}
             sera définitivement supprimé
           </DialogDescription>
           <Button variant="destructive" onClick={() => mutate(wall.id)}>

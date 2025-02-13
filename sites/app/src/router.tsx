@@ -1,5 +1,6 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import { ClimbersPage } from "./features/climber/pages/ClimbersPage";
+import { CompetitionCategoriesPage } from "./features/competition-category/pages/CompetitionCategoriesPage";
 import { RoutesPage } from "./features/route/pages/RoutesPage";
 import { WallsPage } from "./features/wall/pages/WallsPage";
 
@@ -12,6 +13,10 @@ export const router = createBrowserRouter([
   {
     path: "/climbers",
     element: <ClimbersPage />,
+  },
+  {
+    path: "/competition-categories",
+    element: <CompetitionCategoriesPage />,
   },
   {
     path: "/routes",
