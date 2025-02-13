@@ -10,21 +10,21 @@ import {
 import { Pencil } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-import { Wall } from "../dto/Wall";
-import { useUpdateWall } from "../hooks/useUpdateWall";
-import { WallForm, WallFormValues } from "./WallForm";
+import { Route } from "../dto/Route";
+import { useUpdateRoute } from "../hooks/useUpdateRoute";
+import { RouteForm, RouteFormValues } from "./RouteForm";
 
-export interface UpdateWallSheetProps {
-  wall: Wall;
+export interface UpdateRouteSheetProps {
+  route: Route;
 }
 
-export const UpdateWallSheet = ({ wall }: UpdateWallSheetProps) => {
-  const { mutateAsync } = useUpdateWall();
-  const handleSubmit = async (values: WallFormValues) => {
+export const UpdateRouteSheet = ({ route }: UpdateRouteSheetProps) => {
+  const { mutateAsync } = useUpdateRoute();
+  const handleSubmit = async (values: RouteFormValues) => {
     await toast
       .promise(
         mutateAsync(
-          { ...values, id: wall.id },
+          { ...values, id: route.id },
           {
             onSuccess: () => {
               setOpen(false);
@@ -33,8 +33,8 @@ export const UpdateWallSheet = ({ wall }: UpdateWallSheetProps) => {
         ),
         {
           loading: "Modification en cours...",
-          success: "Couloir bien modifié !",
-          error: "Une erreur est survenue en modifiant un couloir",
+          success: "Voie bien modifiée !",
+          error: "Une erreur est survenue en modifiant une voie",
         }
       )
       .unwrap();
@@ -49,10 +49,10 @@ export const UpdateWallSheet = ({ wall }: UpdateWallSheetProps) => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Modifier un couloir</SheetTitle>
+          <SheetTitle>Modifier une voie</SheetTitle>
           <SheetDescription />
         </SheetHeader>
-        <WallForm onSubmit={handleSubmit} defaultValues={wall}></WallForm>
+        <RouteForm onSubmit={handleSubmit} defaultValues={route}></RouteForm>
       </SheetContent>
     </Sheet>
   );

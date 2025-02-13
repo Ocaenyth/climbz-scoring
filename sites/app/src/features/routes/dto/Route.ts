@@ -1,0 +1,17 @@
+import { z } from "zod";
+
+export interface Route {
+  id: string;
+  name: string;
+  // wall
+  // zones
+}
+
+export const createRouteSchema = z.object({
+  name: z.string(),
+  wallId: z.string().uuid(),
+});
+export type CreateRoute = z.infer<typeof createRouteSchema>;
+
+export const updateRouteSchema = createRouteSchema.partial();
+export type UpdateRoute = z.infer<typeof updateRouteSchema>;
