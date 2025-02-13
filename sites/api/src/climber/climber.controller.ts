@@ -13,30 +13,30 @@ import { UpdateClimberDto } from './dto/update-climber.dto';
 
 @Controller('climbers')
 export class ClimberController {
-  constructor(private readonly climbersService: ClimberService) {}
+  constructor(private readonly climberService: ClimberService) {}
 
   @Post()
   create(@Body() createClimberDto: CreateClimberDto) {
-    return this.climbersService.create(createClimberDto);
+    return this.climberService.create(createClimberDto);
   }
 
   @Get()
   findAll() {
-    return this.climbersService.findAll();
+    return this.climberService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.climbersService.findOne(id);
+    return this.climberService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateClimberDto: UpdateClimberDto) {
-    return this.climbersService.update(id, updateClimberDto);
+    return this.climberService.update(id, updateClimberDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.climbersService.remove(id);
+    return this.climberService.remove(id);
   }
 }

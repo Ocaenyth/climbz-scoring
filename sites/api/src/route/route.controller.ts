@@ -13,30 +13,30 @@ import { RouteService } from './route.service';
 
 @Controller('routes')
 export class RouteController {
-  constructor(private readonly routesService: RouteService) {}
+  constructor(private readonly routeService: RouteService) {}
 
   @Post()
   create(@Body() createRouteDto: CreateRouteDto) {
-    return this.routesService.create(createRouteDto);
+    return this.routeService.create(createRouteDto);
   }
 
   @Get()
   findAll() {
-    return this.routesService.findAll();
+    return this.routeService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.routesService.findOne(id);
+    return this.routeService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateRouteDto: UpdateRouteDto) {
-    return this.routesService.update(id, updateRouteDto);
+    return this.routeService.update(id, updateRouteDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.routesService.remove(id);
+    return this.routeService.remove(id);
   }
 }

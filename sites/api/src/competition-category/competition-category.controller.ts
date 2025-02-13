@@ -14,24 +14,22 @@ import { UpdateCompetitionCategoryDto } from './dto/update-competition-category.
 @Controller('competition-categories')
 export class CompetitionCategoryController {
   constructor(
-    private readonly competitionCategoriesService: CompetitionCategoryService,
+    private readonly competitionCategoryService: CompetitionCategoryService,
   ) {}
 
   @Post()
   create(@Body() createCompetitionCategoryDto: CreateCompetitionCategoryDto) {
-    return this.competitionCategoriesService.create(
-      createCompetitionCategoryDto,
-    );
+    return this.competitionCategoryService.create(createCompetitionCategoryDto);
   }
 
   @Get()
   findAll() {
-    return this.competitionCategoriesService.findAll();
+    return this.competitionCategoryService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.competitionCategoriesService.findOne(id);
+    return this.competitionCategoryService.findOne(id);
   }
 
   @Patch(':id')
@@ -39,7 +37,7 @@ export class CompetitionCategoryController {
     @Param('id') id: string,
     @Body() updateCompetitionCategoryDto: UpdateCompetitionCategoryDto,
   ) {
-    return this.competitionCategoriesService.update(
+    return this.competitionCategoryService.update(
       id,
       updateCompetitionCategoryDto,
     );
@@ -47,6 +45,6 @@ export class CompetitionCategoryController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.competitionCategoriesService.remove(id);
+    return this.competitionCategoryService.remove(id);
   }
 }

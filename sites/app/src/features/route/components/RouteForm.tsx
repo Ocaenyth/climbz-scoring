@@ -53,6 +53,25 @@ export const RouteForm = ({ onSubmit, defaultValues }: RouteFormProps) => {
         />
         <FormField
           control={form.control}
+          name="zoneCount"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Nombre de zones (incluant TOP)</FormLabel>
+              <FormControl>
+                <Input
+                  autoComplete="off"
+                  placeholder="Nombre de zones"
+                  type="number"
+                  {...field}
+                />
+              </FormControl>
+              <FormDescription />
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
           name="wallId"
           render={({ field }) => (
             <FormItem>
@@ -61,7 +80,7 @@ export const RouteForm = ({ onSubmit, defaultValues }: RouteFormProps) => {
               <FormMessage />
             </FormItem>
           )}
-        ></FormField>
+        />
         <Button type="submit" disabled={form.formState.isSubmitting}>
           Enregistrer
         </Button>

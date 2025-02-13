@@ -13,30 +13,30 @@ import { ZoneService } from './zone.service';
 
 @Controller('zones')
 export class ZoneController {
-  constructor(private readonly zonesService: ZoneService) {}
+  constructor(private readonly zoneService: ZoneService) {}
 
   @Post()
   create(@Body() createZoneDto: CreateZoneDto) {
-    return this.zonesService.create(createZoneDto);
+    return this.zoneService.create(createZoneDto);
   }
 
   @Get()
   findAll() {
-    return this.zonesService.findAll();
+    return this.zoneService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.zonesService.findOne(id);
+    return this.zoneService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateZoneDto: UpdateZoneDto) {
-    return this.zonesService.update(id, updateZoneDto);
+    return this.zoneService.update(id, updateZoneDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.zonesService.remove(id);
+    return this.zoneService.remove(id);
   }
 }

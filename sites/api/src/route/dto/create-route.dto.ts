@@ -1,4 +1,4 @@
-import { IsString, IsUUID } from 'class-validator';
+import { IsInt, IsString, IsUUID } from 'class-validator';
 
 export class CreateRouteDto {
   @IsString()
@@ -6,4 +6,7 @@ export class CreateRouteDto {
 
   @IsUUID()
   wallId: string;
+
+  @IsInt()
+  zoneCount: number;
 }

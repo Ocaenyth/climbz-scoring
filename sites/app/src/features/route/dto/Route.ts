@@ -10,6 +10,7 @@ export interface Route {
 
 export const createRouteSchema = z.object({
   name: z.string(),
+  zoneCount: z.coerce.number(),
   wallId: z.string().uuid(),
 });
 export type CreateRoute = z.infer<typeof createRouteSchema>;
