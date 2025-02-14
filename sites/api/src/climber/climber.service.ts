@@ -38,8 +38,6 @@ export class ClimberService {
   }
 
   async validateZones(id: string, validateZonesDto: ValidateZonesDto) {
-    console.log(`climberId: ${id}`);
-    console.log(validateZonesDto);
     return prisma.climbersToMaxSuccessfulZone.upsert({
       where: {
         climberId_routeId: {

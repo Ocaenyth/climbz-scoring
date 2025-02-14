@@ -1,6 +1,8 @@
 import { AdminHomeButton } from "@/components/AdminHomeButton";
 import { DataTable } from "@/components/ui/data-table";
 import { ColumnDef } from "@tanstack/react-table";
+import { Link } from "react-router-dom";
+import { ClimberQrCodeDialog } from "../components/ClimberQrCodeDialog";
 import { CreateClimberSheet } from "../components/CreateClimberSheet";
 import { DeleteClimberButton } from "../components/DeleteClimberButton";
 import { UpdateClimberSheet } from "../components/UpdateClimberSheet";
@@ -11,6 +13,20 @@ const columns: ColumnDef<Climber>[] = [
   {
     header: "ID",
     accessorKey: "id",
+    cell: ({ row: { original } }) => {
+      return (
+        <div>
+          <Link
+            to={`/climbers/${original.id}`}
+            target="_blank"
+            className="underline flex justify-center"
+          >
+            {original.id}
+          </Link>
+          <ClimberQrCodeDialog climber={original} />
+        </div>
+      );
+    },
   },
   {
     header: "Crée le",
