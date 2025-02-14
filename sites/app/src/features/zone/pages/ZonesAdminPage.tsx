@@ -1,13 +1,13 @@
 import { AdminHomeButton } from "@/components/AdminHomeButton";
 import { DataTable } from "@/components/ui/data-table";
 import { ColumnDef } from "@tanstack/react-table";
-import { CreateWallSheet } from "../components/CreateWallSheet";
-import { DeleteWallButton } from "../components/DeleteWallButton";
-import { UpdateWallSheet } from "../components/UpdateWallSheet";
-import { Wall } from "../dto/Wall";
-import { useWalls } from "../hooks/useWalls";
+import { CreateZoneSheet } from "../components/CreateZoneSheet";
+import { DeleteZoneButton } from "../components/DeleteZoneButton";
+import { UpdateZoneSheet } from "../components/UpdateZoneSheet";
+import { Zone } from "../dto/Zone";
+import { useZones } from "../hooks/useZones";
 
-const columns: ColumnDef<Wall>[] = [
+const columns: ColumnDef<Zone>[] = [
   {
     header: "ID",
     accessorKey: "id",
@@ -22,8 +22,8 @@ const columns: ColumnDef<Wall>[] = [
     cell: ({ row: { original } }) => {
       return (
         <div className="flex flex-row gap-1.5">
-          <UpdateWallSheet wall={original}></UpdateWallSheet>
-          <DeleteWallButton wall={original} />
+          <UpdateZoneSheet zone={original}></UpdateZoneSheet>
+          <DeleteZoneButton zone={original} />
         </div>
       );
     },
@@ -31,12 +31,12 @@ const columns: ColumnDef<Wall>[] = [
   },
 ];
 
-export const WallsPage = () => {
-  const { data } = useWalls();
+export const ZonesAdminPage = () => {
+  const { data } = useZones();
   return (
     <div>
       <AdminHomeButton />
-      <CreateWallSheet />
+      <CreateZoneSheet />
       {data && (
         <div className="container mx-auto py-10">
           <DataTable columns={columns} data={data} />

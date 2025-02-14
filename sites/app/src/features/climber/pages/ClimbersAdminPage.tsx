@@ -51,7 +51,7 @@ const columns: ColumnDef<Climber>[] = [
   },
 ];
 
-export const ClimbersPage = () => {
+export const ClimbersAdminPage = () => {
   const { data } = useClimbers();
   return (
     <div>

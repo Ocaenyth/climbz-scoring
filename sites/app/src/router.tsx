@@ -1,12 +1,12 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/HomePage";
 import { ClimberContestPage } from "./features/climber/pages/ClimberContestPage";
-import { ClimbersPage } from "./features/climber/pages/ClimbersPage";
-import { CompetitionCategoriesPage } from "./features/competition-category/pages/CompetitionCategoriesPage";
+import { ClimbersAdminPage } from "./features/climber/pages/ClimbersAdminPage";
+import { CompetitionCategoriesAdminPage } from "./features/competition-category/pages/CompetitionCategoriesAdminPage";
 import { AdminPage } from "./features/pages/AdminPage";
-import { RoutesPage } from "./features/route/pages/RoutesPage";
-import { WallsPage } from "./features/wall/pages/WallsPage";
-import { ZonesPage } from "./features/zone/pages/ZonesPage";
+import { RoutesAdminPage } from "./features/route/pages/RoutesAdminPage";
+import { WallsAdminPage } from "./features/wall/pages/WallsAdminPage";
+import { ZonesAdminPage } from "./features/zone/pages/ZonesAdminPage";
 
 export const router = createBrowserRouter([
   // Public
@@ -26,23 +26,23 @@ export const router = createBrowserRouter([
   },
   {
     path: "/privAdmin/climbers",
-    element: <ClimbersPage />,
+    element: <ClimbersAdminPage />,
   },
   {
     path: "/privAdmin/competition-categories",
-    element: <CompetitionCategoriesPage />,
+    element: <CompetitionCategoriesAdminPage />,
   },
   {
     path: "/privAdmin/routes",
-    element: <RoutesPage />,
+    element: <RoutesAdminPage />,
   },
   {
     path: "/privAdmin/walls",
-    element: <WallsPage />,
+    element: <WallsAdminPage />,
   },
   {
     path: "/privAdmin/zones",
-    element: <ZonesPage />,
+    element: <ZonesAdminPage />,
   },
   // 404 redirect
   { path: "*", element: <Navigate to={"/"} replace></Navigate> },

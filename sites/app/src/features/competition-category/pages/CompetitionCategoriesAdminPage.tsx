@@ -43,7 +43,7 @@ const columns: ColumnDef<CompetitionCategory>[] = [
   },
 ];
 
-export const CompetitionCategoriesPage = () => {
+export const CompetitionCategoriesAdminPage = () => {
   const { data } = useCompetitionCategories();
   return (
     <div>

@@ -43,7 +43,7 @@ const columns: ColumnDef<Route>[] = [
   },
 ];
 
-export const RoutesPage = () => {
+export const RoutesAdminPage = () => {
   const { data } = useRoutes();
   return (
     <div>
