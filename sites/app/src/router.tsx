@@ -1,5 +1,6 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/HomePage";
+import { ClimberContestPage } from "./features/climber/pages/ClimberContestPage";
 import { ClimbersPage } from "./features/climber/pages/ClimbersPage";
 import { CompetitionCategoriesPage } from "./features/competition-category/pages/CompetitionCategoriesPage";
 import { AdminPage } from "./features/pages/AdminPage";
@@ -8,10 +9,15 @@ import { WallsPage } from "./features/wall/pages/WallsPage";
 import { ZonesPage } from "./features/zone/pages/ZonesPage";
 
 export const router = createBrowserRouter([
-  // Home
+  // Public
   {
     path: "/",
     element: <HomePage />,
+  },
+  {
+    path: "/climbers/:climberId",
+
+    element: <ClimberContestPage />,
   },
   // Admin side
   {

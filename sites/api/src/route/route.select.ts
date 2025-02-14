@@ -9,6 +9,7 @@ export const routeSummarySelect = {
 
 export const routeSelect = {
   ...routeSummarySelect,
+  successfulClimbers: { select: { climberId: true, maxSuccessfulZone: true } },
   zones: { select: zoneSummarySelect },
   wall: { select: wallSummarySelect },
 } satisfies Prisma.RouteSelect;

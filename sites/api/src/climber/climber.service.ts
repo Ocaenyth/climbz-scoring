@@ -3,6 +3,7 @@ import { prisma } from 'src/prisma/client';
 import { climberSelect } from './climber.select';
 import { CreateClimberDto } from './dto/create-climber.dto';
 import { UpdateClimberDto } from './dto/update-climber.dto';
+import { ValidateZonesDto } from './dto/validate-zone.dto';
 
 @Injectable()
 export class ClimberService {
@@ -34,5 +35,26 @@ export class ClimberService {
 
   remove(id: string) {
     return prisma.climber.delete({ select: climberSelect, where: { id } });
+  }
+
+  async validateZones(id: string, validateZonesDto: ValidateZonesDto) {
+    console.log(`climberId: ${id}`);
+    console.log(validateZonesDto);
+    return prisma.climbersToMaxSuccessfulZone.upsert({
+      where: {
+        climberId_routeId: {
+          climberId: id,
+          routeId: validateZonesDto.routeId,
+        },
+      },
+      update: {
+        maxSuccessfulZone: validateZonesDto.maxZone,
+      },
+      create: {
+        climberId: id,
+        routeId: validateZonesDto.routeId,
+        maxSuccessfulZone: validateZonesDto.maxZone,
+      },
+    });
   }
 }

@@ -10,6 +10,7 @@ import {
 import { ClimberService } from './climber.service';
 import { CreateClimberDto } from './dto/create-climber.dto';
 import { UpdateClimberDto } from './dto/update-climber.dto';
+import { ValidateZonesDto } from './dto/validate-zone.dto';
 
 @Controller('climbers')
 export class ClimberController {
@@ -38,5 +39,13 @@ export class ClimberController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.climberService.remove(id);
+  }
+
+  @Post(':id/validateZones')
+  validateZones(
+    @Param('id') id: string,
+    @Body() validateZonesDto: ValidateZonesDto,
+  ) {
+    return this.climberService.validateZones(id, validateZonesDto);
   }
 }

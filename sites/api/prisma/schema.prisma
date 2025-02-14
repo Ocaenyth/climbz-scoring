@@ -18,18 +18,19 @@ model Climber {
   age       Int
   gender    Gender
 
-  successfulZones ClimbersToSuccessfulZones[]
+  successfulZones ClimbersToMaxSuccessfulZone[]
 }
 
-model ClimbersToSuccessfulZones {
-  @@id([climberId, zoneId])
-  assignedAt DateTime @default(now())
+model ClimbersToMaxSuccessfulZone {
+  @@id([climberId, routeId])
+  assignedAt        DateTime @default(now())
+  maxSuccessfulZone Int
 
   climber   Climber @relation(fields: [climberId], references: [id], onDelete: Cascade)
   climberId String  @db.Uuid
 
-  zone   Zone   @relation(fields: [zoneId], references: [id], onDelete: Cascade)
-  zoneId String @db.Uuid
+  route   Route  @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  routeId String @db.Uuid
 }
 
 model CompetitionCategory {
@@ -56,6 +57,7 @@ model Route {
   wallId String @db.Uuid
   
   zones Zone[]
+  successfulClimbers ClimbersToMaxSuccessfulZone[]
 }
 
 model Wall {
@@ -71,6 +73,4 @@ model Zone {
 
   route   Route  @relation(fields: [routeId], references: [id], onDelete: Cascade)
   routeId String @db.Uuid
-
-  successfulClimbers ClimbersToSuccessfulZones[]
 }
