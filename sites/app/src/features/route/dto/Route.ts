@@ -1,5 +1,5 @@
-import { Wall } from "@/features/admin/wall/dto/Wall";
-import { Zone } from "@/features/admin/zone/dto/Zone";
+import { Wall } from "@/features/wall/dto/Wall";
+import { Zone } from "@/features/zone/dto/Zone";
 import { z } from "zod";
 
 export interface Route {
