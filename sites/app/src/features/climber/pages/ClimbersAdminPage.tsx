@@ -2,6 +2,7 @@ import { AdminHomeButton } from "@/components/AdminHomeButton";
 import { DataTable } from "@/components/ui/data-table";
 import { ColumnDef } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
+import { ClimberCompetitionCategoryCell } from "../components/ClimberCompetitionCategoryCell";
 import { ClimberQrCodeDialog } from "../components/ClimberQrCodeDialog";
 import { CreateClimberSheet } from "../components/CreateClimberSheet";
 import { DeleteClimberButton } from "../components/DeleteClimberButton";
@@ -12,7 +13,6 @@ import { useClimbers } from "../hooks/useClimbers";
 const columns: ColumnDef<Climber>[] = [
   {
     header: "ID",
-    accessorKey: "id",
     cell: ({ row: { original } }) => {
       return (
         <div>
@@ -26,6 +26,12 @@ const columns: ColumnDef<Climber>[] = [
           <ClimberQrCodeDialog climber={original} />
         </div>
       );
+    },
+  },
+  {
+    header: "Catégorie",
+    cell: ({ row: { original } }) => {
+      return <ClimberCompetitionCategoryCell climber={original} />;
     },
   },
   {
