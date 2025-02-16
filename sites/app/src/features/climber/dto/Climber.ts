@@ -1,3 +1,4 @@
+import { CompetitionCategory } from "@/features/competition-category/dto/CompetitionCategory";
 import { z } from "zod";
 import { Gender, GenderEnum } from "./Gender";
 
@@ -9,7 +10,7 @@ export interface Climber {
   lastName: string;
   age: number;
   gender: Gender;
-  // successfulZones
+  competitionCategory: CompetitionCategory;
 }
 
 export const createClimberSchema = z.object({
@@ -17,6 +18,7 @@ export const createClimberSchema = z.object({
   lastName: z.string(),
   age: z.coerce.number(),
   gender: GenderEnum,
+  competitionCategoryId: z.string().uuid(),
 });
 
 export type CreateClimber = z.infer<typeof createClimberSchema>;

@@ -18,6 +18,9 @@ model Climber {
   age       Int
   gender    Gender
 
+  competitionCategory   CompetitionCategory @relation(fields: [competitionCategoryId], references: [id])
+  competitionCategoryId String @db.Uuid
+
   successfulZones ClimbersToMaxSuccessfulZone[]
 }
 
@@ -40,6 +43,8 @@ model CompetitionCategory {
   minAge Int
   maxAge Int
   gender Gender
+
+  climbers Climber[]
 }
 
 enum Gender {

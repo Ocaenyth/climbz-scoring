@@ -1,6 +1,7 @@
 import { Prisma } from '@prisma/client';
+import { competitionCategorySummarySelect } from 'src/competition-category/competition-category.select';
 
-export const climberSelect = {
+export const climberSummarySelect = {
   id: true,
   firstName: true,
   lastName: true,
@@ -8,6 +9,9 @@ export const climberSelect = {
   gender: true,
   createdAt: true,
   updatedAt: true,
-  // FIXME: Add ?
-  //   successfulZones: true,
+} satisfies Prisma.ClimberSelect;
+
+export const climberSelect = {
+  ...climberSummarySelect,
+  competitionCategory: { select: competitionCategorySummarySelect },
 } satisfies Prisma.ClimberSelect;

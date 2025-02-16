@@ -8,6 +8,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { CompetitionCategorySelect } from "@/features/competition-category/components/CompetitionCategorySelect";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { DefaultValues, SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
@@ -95,6 +96,17 @@ export const ClimberForm = ({ onSubmit, defaultValues }: ClimberFormProps) => {
                 field={field}
                 defaultValue={defaultValues?.gender}
               />
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="competitionCategoryId"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Catégorie</FormLabel>
+              <CompetitionCategorySelect field={field} />
               <FormMessage />
             </FormItem>
           )}

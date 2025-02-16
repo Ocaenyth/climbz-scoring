@@ -1,5 +1,5 @@
 import { Gender } from '@prisma/client';
-import { IsEnum, IsInt, IsString } from 'class-validator';
+import { IsEnum, IsInt, IsString, IsUUID } from 'class-validator';
 
 export class CreateClimberDto {
   @IsString()
@@ -13,4 +13,7 @@ export class CreateClimberDto {
 
   @IsEnum(Gender)
   gender: Gender;
+
+  @IsUUID()
+  competitionCategoryId: string;
 }

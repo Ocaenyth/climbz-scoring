@@ -1,9 +1,9 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/HomePage";
+import { AdminPage } from "./features/admin/pages/AdminPage";
 import { ClimberContestPage } from "./features/climber/pages/ClimberContestPage";
 import { ClimbersAdminPage } from "./features/climber/pages/ClimbersAdminPage";
 import { CompetitionCategoriesAdminPage } from "./features/competition-category/pages/CompetitionCategoriesAdminPage";
-import { AdminPage } from "./features/pages/AdminPage";
 import { RoutesAdminPage } from "./features/route/pages/RoutesAdminPage";
 import { WallsAdminPage } from "./features/wall/pages/WallsAdminPage";
 import { ZonesAdminPage } from "./features/zone/pages/ZonesAdminPage";
