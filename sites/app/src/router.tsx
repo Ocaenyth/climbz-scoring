@@ -6,7 +6,6 @@ import { ClimbersAdminPage } from "./features/climber/pages/ClimbersAdminPage";
 import { CompetitionCategoriesAdminPage } from "./features/competition-category/pages/CompetitionCategoriesAdminPage";
 import { RoutesAdminPage } from "./features/route/pages/RoutesAdminPage";
 import { WallsAdminPage } from "./features/wall/pages/WallsAdminPage";
-import { ZonesAdminPage } from "./features/zone/pages/ZonesAdminPage";
 
 export const router = createBrowserRouter([
   // Public
@@ -39,10 +38,6 @@ export const router = createBrowserRouter([
   {
     path: "/privAdmin/walls",
     element: <WallsAdminPage />,
-  },
-  {
-    path: "/privAdmin/zones",
-    element: <ZonesAdminPage />,
   },
   // 404 redirect
   { path: "*", element: <Navigate to={"/"} replace></Navigate> },

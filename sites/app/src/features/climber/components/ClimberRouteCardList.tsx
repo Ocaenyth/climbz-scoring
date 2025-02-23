@@ -27,6 +27,10 @@ export const ClimberRouteCardList = ({
             route.successfulClimbers.find((climber) => {
               return climber.climberId === climberId;
             })?.maxSuccessfulZone || 0;
+          const zones = [];
+          for (let i = 1; i <= route.zoneCount; i++) {
+            zones.push(i);
+          }
           return (
             <Card key={route.id}>
               <CardHeader>
@@ -43,20 +47,20 @@ export const ClimberRouteCardList = ({
                 >
                   Reset
                 </Button>
-                {route.zones.map((zone) => (
+                {zones.map((zoneNumber) => (
                   <Button
-                    key={zone.id}
+                    key={zoneNumber}
                     onClick={() =>
                       mutate({
                         routeId: route.id,
-                        maxZone: zone.number,
+                        maxZone: zoneNumber,
                       })
                     }
                     className={classNames("font-semibold", {
-                      "bg-green-500": zone.number <= currentMaxSuccesfulZone,
+                      "bg-green-500": zoneNumber <= currentMaxSuccesfulZone,
                     })}
                   >
-                    {zone.number !== route.zones.length ? zone.number : "TOP"}
+                    {zoneNumber !== route.zoneCount ? zoneNumber : "TOP"}
                   </Button>
                 ))}
               </CardContent>

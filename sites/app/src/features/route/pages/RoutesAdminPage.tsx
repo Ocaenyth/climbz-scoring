@@ -25,7 +25,7 @@ const columns: ColumnDef<Route>[] = [
   {
     header: "Nombre de zones",
     accessorFn: (route) => {
-      return route.zones.length;
+      return route.zoneCount;
     },
   },
   {

@@ -10,9 +10,6 @@ export const AdminPage = () => {
       <Link to="/privAdmin/climbers" className={buttonVariants()}>
         Participant.es
       </Link>
-      <Link to="/privAdmin/zones" className={buttonVariants()}>
-        Zones
-      </Link>
       <Link to="/privAdmin/routes" className={buttonVariants()}>
         Voies
       </Link>

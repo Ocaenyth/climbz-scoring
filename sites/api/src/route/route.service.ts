@@ -7,17 +7,9 @@ import { routeSelect } from './route.select';
 @Injectable()
 export class RouteService {
   create(createRouteDto: CreateRouteDto) {
-    let zones = [];
-    for (let i = 1; i <= createRouteDto.zoneCount; i++) {
-      zones.push({ number: i });
-    }
     return prisma.route.create({
       select: routeSelect,
-      data: {
-        name: createRouteDto.name,
-        wallId: createRouteDto.wallId,
-        zones: { createMany: { data: zones } },
-      },
+      data: createRouteDto,
     });
   }
 

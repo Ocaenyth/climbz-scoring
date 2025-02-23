@@ -61,7 +61,7 @@ model Route {
   wall   Wall   @relation(fields: [wallId], references: [id], onDelete: Cascade)
   wallId String @db.Uuid
   
-  zones Zone[]
+  zoneCount Int
   successfulClimbers ClimbersToMaxSuccessfulZone[]
 }
 
@@ -69,13 +69,4 @@ model Wall {
   id     String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
   number Int
   routes Route[]
-}
-
-model Zone {
-  @@unique([number, routeId])
-  id     String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  number Int
-
-  route   Route  @relation(fields: [routeId], references: [id], onDelete: Cascade)
-  routeId String @db.Uuid
 }

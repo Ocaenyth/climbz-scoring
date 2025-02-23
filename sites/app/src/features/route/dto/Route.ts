@@ -1,5 +1,4 @@
 import { Wall } from "@/features/wall/dto/Wall";
-import { Zone } from "@/features/zone/dto/Zone";
 import { z } from "zod";
 
 export interface SuccessfulClimber {
@@ -10,8 +9,8 @@ export interface SuccessfulClimber {
 export interface Route {
   id: string;
   name: string;
+  zoneCount: number;
   successfulClimbers: SuccessfulClimber[];
-  zones: Zone[];
   wall: Wall;
 }
 

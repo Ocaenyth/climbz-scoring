@@ -6,11 +6,9 @@ import { StatsController } from './stats/stats.controller';
 import { StatsModule } from './stats/stats.module';
 import { StatsService } from './stats/stats.service';
 import { WallModule } from './wall/wall.module';
-import { ZoneModule } from './zone/zone.module';
 
 @Module({
   imports: [
-    ZoneModule,
     RouteModule,
     CompetitionCategoryModule,
     WallModule,
