@@ -65,6 +65,8 @@ services:
       - DOMAIN=${DOMAIN}
     volumes:
       - ./.docker/nginx-https/templates:/etc/nginx/templates:ro
+      - ./.docker/certbot/etc/live/$DOMAIN/fullchain.pem:/etc/nginx/ssl/fullchain.pem:ro
+      - ./.docker/certbot/etc/live/$DOMAIN/privkey.pem:/etc/nginx/ssl/privkey.pem:ro
     restart: unless-stopped
 
   certbot:
