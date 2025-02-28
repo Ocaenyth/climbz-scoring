@@ -12,6 +12,7 @@ services:
     restart: unless-stopped
     environment:
       - DATABASE_URL=postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@postgres:5432/app
+      - PORT=80
 
   app:
     container_name: app_app
