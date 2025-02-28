@@ -47,13 +47,24 @@ services:
     depends_on:
       - api
       - app
+    environment:
+      - DOMAIN=${DOMAIN}
+    volumes:
+      - ./.docker/nginx/templates:/etc/nginx/templates:ro
+    restart: unless-stopped
+
+  nginx-https:
+    container_name: app_nginx_https
+    image: nginx:stable-alpine
+    depends_on:
+      - nginx
     ports:
       - "80:80"
       - "443:443"
     environment:
       - DOMAIN=${DOMAIN}
     volumes:
-      - ./.docker/nginx/templates:/etc/nginx/templates:ro
+      - ./.docker/nginx-https/templates:/etc/nginx/templates:ro
     restart: unless-stopped
 
   certbot:
