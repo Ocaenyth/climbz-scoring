@@ -4,16 +4,16 @@ import { defineConfig } from "vite";
 import viteChecker from "vite-plugin-checker";
 
 export default defineConfig({
-    plugins: [
-        viteReact(),
-        viteChecker({
-            typescript: true
-        }),
-    ],
-    resolve: {
-        alias: {
-            "@": path.resolve(__dirname, "src"),
-        },
+  plugins: [
+    viteReact(),
+    viteChecker({
+      typescript: true,
+    }),
+  ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
     },
-
+  },
+  envPrefix: "PUBLIC_",
 });

@@ -12,7 +12,7 @@ export const fetchApi = async <T>(
     init.body = JSON.stringify(json);
     headers["Content-Type"] = "application/json";
   }
-  const url = new URL(path, import.meta.env.VITE_API_URL);
+  const url = new URL(path, import.meta.env.PUBLIC_API_URL);
   const response = await fetch(url.href, init);
   if (!response.ok) {
     throw new Error(`Invalid response from API: ${response.statusText}`);
