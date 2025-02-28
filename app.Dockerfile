@@ -9,8 +9,8 @@ RUN yarn --frozen-lockfile
 
 COPY sites/app ./sites/app
 
-ARG API_URL
-ENV PUBLIC_API_URL=${API_URL}
+ARG PUBLIC_API_URL
+ENV PUBLIC_API_URL=${PUBLIC_API_URL}
 
 RUN yarn workspace @climbz-scoring/app build
 
