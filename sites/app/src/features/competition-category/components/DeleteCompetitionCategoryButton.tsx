@@ -38,7 +38,7 @@ export const DeleteCompetitionCategoryButton = ({
             Cette action ne peut pas être annulée, et la catégorie{" "}
             {competitionCategory.name} ({competitionCategory.gender} :{" "}
             {competitionCategory.minAge} - {competitionCategory.maxAge}) sera
-            définitivement supprimée
+            définitivement supprimée, AINSI QUE TOUS.TES SES PARTICIPANT.ES
           </DialogDescription>
           <AcceptDeletionButton
             onClick={async () => mutate(competitionCategory.id)}

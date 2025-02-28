@@ -16,6 +16,9 @@ export const AdminPage = () => {
       <Link to="/privAdmin/walls" className={buttonVariants()}>
         Couloirs
       </Link>
+      <Link to="/privAdmin/results" className={buttonVariants()}>
+        Résultats
+      </Link>
     </div>
   );
 };

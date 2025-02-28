@@ -106,7 +106,11 @@ export const ClimberForm = ({ onSubmit, defaultValues }: ClimberFormProps) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Catégorie</FormLabel>
-              <CompetitionCategorySelect field={field} />
+              <CompetitionCategorySelect
+                field={field}
+                // TODO: This doesn't work please fix
+                defaultValue={defaultValues?.competitionCategoryId}
+              />
               <FormMessage />
             </FormItem>
           )}

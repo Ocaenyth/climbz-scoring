@@ -47,4 +47,9 @@ export class CompetitionCategoryController {
   remove(@Param('id') id: string) {
     return this.competitionCategoryService.remove(id);
   }
+
+  @Get(':id/results')
+  computeCategoryResults(@Param('id') id: string) {
+    return this.competitionCategoryService.computeCategoryResults(id);
+  }
 }

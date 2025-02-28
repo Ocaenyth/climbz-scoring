@@ -1,5 +1,6 @@
 import { Prisma } from '@prisma/client';
 import { competitionCategorySummarySelect } from 'src/competition-category/competition-category.select';
+import { routeSummarySelect } from 'src/route/route.select';
 
 export const climberSummarySelect = {
   id: true,
@@ -14,4 +15,10 @@ export const climberSummarySelect = {
 export const climberSelect = {
   ...climberSummarySelect,
   competitionCategory: { select: competitionCategorySummarySelect },
+  successfulZones: {
+    select: {
+      route: { select: routeSummarySelect },
+      maxSuccessfulZone: true,
+    },
+  },
 } satisfies Prisma.ClimberSelect;

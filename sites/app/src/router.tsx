@@ -4,6 +4,7 @@ import { AdminPage } from "./features/admin/pages/AdminPage";
 import { ClimberContestPage } from "./features/climber/pages/ClimberContestPage";
 import { ClimbersAdminPage } from "./features/climber/pages/ClimbersAdminPage";
 import { CompetitionCategoriesAdminPage } from "./features/competition-category/pages/CompetitionCategoriesAdminPage";
+import { LeaderboardPage } from "./features/competition-category/pages/CompetitionResultsPage";
 import { RoutesAdminPage } from "./features/route/pages/RoutesAdminPage";
 import { WallsAdminPage } from "./features/wall/pages/WallsAdminPage";
 
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
   {
     path: "/privAdmin/routes",
     element: <RoutesAdminPage />,
+  },
+  {
+    path: "/privAdmin/results",
+    element: <LeaderboardPage />,
   },
   {
     path: "/privAdmin/walls",

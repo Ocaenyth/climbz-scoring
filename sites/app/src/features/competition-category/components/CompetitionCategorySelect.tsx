@@ -10,10 +10,12 @@ import { useCompetitionCategories } from "../hooks/useCompetitionCategories";
 
 export interface CompetitionCategorySelectProps {
   field: any;
+  defaultValue?: string;
 }
 
 export const CompetitionCategorySelect = ({
   field,
+  defaultValue,
 }: CompetitionCategorySelectProps) => {
   const { data } = useCompetitionCategories();
   return (
@@ -23,7 +25,7 @@ export const CompetitionCategorySelect = ({
           <SelectValue placeholder="Choisissez une catégorie" />
         </SelectTrigger>
       </FormControl>
-      <SelectContent>
+      <SelectContent defaultValue={defaultValue}>
         {data &&
           data.map((competitionCategory) => (
             <SelectItem

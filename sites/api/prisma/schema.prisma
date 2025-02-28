@@ -18,7 +18,7 @@ model Climber {
   age       Int
   gender    Gender
 
-  competitionCategory   CompetitionCategory @relation(fields: [competitionCategoryId], references: [id])
+  competitionCategory   CompetitionCategory @relation(fields: [competitionCategoryId], references: [id], onDelete: Cascade)
   competitionCategoryId String @db.Uuid
 
   successfulZones ClimbersToMaxSuccessfulZone[]
