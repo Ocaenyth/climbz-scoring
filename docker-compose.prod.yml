@@ -73,7 +73,7 @@ services:
       - ./.docker/certbot/etc:/etc/letsencrypt
       - ./.docker/certbot/lib:/var/lib/letsencrypt
       - ./.docker/certbot/ovh.ini:/var/ovh.ini
-    command: certonly --agree-tos --renew-by-default --text --email $EMAIL --dns-ovh --dns-ovh-credentials /var/ovh.ini -d $DOMAIN
+    command: certonly --agree-tos --renew-by-default --text --email $EMAIL --dns-ovh --dns-ovh-credentials /var/ovh.ini -d $DOMAIN -d api.$DOMAIN
 
   prisma:
     container_name: app_prisma
