@@ -22,7 +22,7 @@ export const ClimberQrCodeDialog = ({ climber }: ClimberQrCodeDialogProps) => {
           <QrCodeIcon />
         </Button>
       </DialogTrigger>
-      <DialogContent className="flex flex-col p-8 relative max-w-xl">
+      <DialogContent className="flex flex-col p-8 max-w-xl">
         <DialogHeader>
           <DialogTitle className="flex justify-center">
             QR code pour {climber.firstName} {climber.lastName}
