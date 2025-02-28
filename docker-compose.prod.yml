@@ -58,7 +58,7 @@ services:
 
   certbot:
     container_name: app_certbot
-    image: certbot/certbot
+    image: certbot/dns-ovh
     volumes:
       - ./.docker/certbot/etc:/etc/letsencrypt
       - ./.docker/certbot/lib:/var/lib/letsencrypt
