@@ -1,3 +1,4 @@
 node_modules
 .docker/data
 sites/*/dist
+.env
