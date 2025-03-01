@@ -35,14 +35,6 @@ const columns: ColumnDef<Climber>[] = [
     },
   },
   {
-    header: "Crée le",
-    accessorKey: "createdAt",
-  },
-  {
-    header: "Modifié le",
-    accessorKey: "updatedAt",
-  },
-  {
     header: "Prénom",
     accessorKey: "firstName",
   },
