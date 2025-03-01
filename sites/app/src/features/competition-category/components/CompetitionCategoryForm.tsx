@@ -64,7 +64,7 @@ export const CompetitionCategoryForm = ({
           name="minAge"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Catégorie</FormLabel>
+              <FormLabel>Âge minimum (inclus)</FormLabel>
               <FormControl>
                 <Input
                   autoComplete="off"
@@ -83,7 +83,7 @@ export const CompetitionCategoryForm = ({
           name="maxAge"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Catégorie</FormLabel>
+              <FormLabel>Âge maximum (inclus)</FormLabel>
               <FormControl>
                 <Input
                   autoComplete="off"
