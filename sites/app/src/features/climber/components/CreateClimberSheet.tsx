@@ -16,18 +16,11 @@ export const CreateClimberSheet = () => {
   const { mutateAsync } = useCreateClimber();
   const handleSubmit = async (values: ClimberFormValues) => {
     await toast
-      .promise(
-        mutateAsync(values, {
-          onSuccess: () => {
-            setOpen(false);
-          },
-        }),
-        {
-          loading: "Ajout en cours...",
-          success: "Participant.e ajouté.e !",
-          error: "Erreur lors de la création du/de la participant.e",
-        }
-      )
+      .promise(mutateAsync(values), {
+        loading: "Ajout en cours...",
+        success: "Participant.e ajouté.e !",
+        error: "Erreur lors de la création du/de la participant.e",
+      })
       .unwrap();
   };
   const [open, setOpen] = useState(false);

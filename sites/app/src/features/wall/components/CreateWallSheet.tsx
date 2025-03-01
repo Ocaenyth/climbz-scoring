@@ -16,18 +16,11 @@ export const CreateWallSheet = () => {
   const { mutateAsync } = useCreateWall();
   const handleSubmit = async (values: WallFormValues) => {
     await toast
-      .promise(
-        mutateAsync(values, {
-          onSuccess: () => {
-            setOpen(false);
-          },
-        }),
-        {
-          loading: "Ajout en cours...",
-          success: "Couloir ajouté !",
-          error: "Erreur lors de la création du couloir",
-        }
-      )
+      .promise(mutateAsync(values), {
+        loading: "Ajout en cours...",
+        success: "Couloir ajouté !",
+        error: "Erreur lors de la création du couloir",
+      })
       .unwrap();
   };
   const [open, setOpen] = useState(false);

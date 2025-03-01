@@ -53,6 +53,14 @@ export const WallForm = ({ onSubmit, defaultValues }: WallFormProps) => {
         <Button type="submit" disabled={form.formState.isSubmitting}>
           Enregistrer
         </Button>
+        <Button
+          type="reset"
+          onClick={() => {
+            form.reset();
+          }}
+        >
+          Reset
+        </Button>
       </form>
     </Form>
   );

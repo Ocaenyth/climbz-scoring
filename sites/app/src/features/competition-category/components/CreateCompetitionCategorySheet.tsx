@@ -19,18 +19,11 @@ export const CreateCompetitionCategorySheet = () => {
   const { mutateAsync } = useCreateCompetitionCategory();
   const handleSubmit = async (values: CompetitionCategoryFormValues) => {
     await toast
-      .promise(
-        mutateAsync(values, {
-          onSuccess: () => {
-            setOpen(false);
-          },
-        }),
-        {
-          loading: "Ajout en cours...",
-          success: "Catégorie ajoutée !",
-          error: "Erreur lors de la création de la catégorie",
-        }
-      )
+      .promise(mutateAsync(values), {
+        loading: "Ajout en cours...",
+        success: "Catégorie ajoutée !",
+        error: "Erreur lors de la création de la catégorie",
+      })
       .unwrap();
   };
   const [open, setOpen] = useState(false);

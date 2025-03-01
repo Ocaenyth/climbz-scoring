@@ -112,6 +112,17 @@ export const CompetitionCategoryForm = ({
         <Button type="submit" disabled={form.formState.isSubmitting}>
           Enregistrer
         </Button>
+        <Button
+          type="reset"
+          onClick={() => {
+            const values = form.getValues();
+            form.reset({
+              gender: values.gender,
+            });
+          }}
+        >
+          Reset
+        </Button>
       </form>
     </Form>
   );

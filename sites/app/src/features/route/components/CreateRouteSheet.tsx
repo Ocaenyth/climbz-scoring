@@ -16,18 +16,11 @@ export const CreateRouteSheet = () => {
   const { mutateAsync } = useCreateRoute();
   const handleSubmit = async (values: RouteFormValues) => {
     await toast
-      .promise(
-        mutateAsync(values, {
-          onSuccess: () => {
-            setOpen(false);
-          },
-        }),
-        {
-          loading: "Ajout en cours...",
-          success: "Voie ajoutée !",
-          error: "Erreur lors de la création de la voie",
-        }
-      )
+      .promise(mutateAsync(values), {
+        loading: "Ajout en cours...",
+        success: "Voie ajoutée !",
+        error: "Erreur lors de la création de la voie",
+      })
       .unwrap();
   };
   const [open, setOpen] = useState(false);

@@ -84,6 +84,18 @@ export const RouteForm = ({ onSubmit, defaultValues }: RouteFormProps) => {
         <Button type="submit" disabled={form.formState.isSubmitting}>
           Enregistrer
         </Button>
+        <Button
+          type="reset"
+          onClick={() => {
+            const values = form.getValues();
+            form.reset({
+              zoneCount: values.zoneCount,
+              wallId: values.wallId,
+            });
+          }}
+        >
+          Reset
+        </Button>
       </form>
     </Form>
   );
