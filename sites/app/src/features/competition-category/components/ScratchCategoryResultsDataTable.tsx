@@ -25,7 +25,8 @@ const columns: ColumnDef<CategoryResult>[] = [
           target="_blank"
           className="underline flex justify-center"
         >
-          {original.climber.firstName} {original.climber.lastName}
+          {original.climber.firstName} {original.climber.lastName} (
+          {original.climber.competitionCategory.name})
         </Link>
       );
     },
