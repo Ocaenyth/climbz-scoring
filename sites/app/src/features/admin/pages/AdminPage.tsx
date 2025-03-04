@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const AdminPage = () => {
   return (
-    <div>
+    <div className="flex space-x-2">
       <Link to="/privAdmin/competition-categories" className={buttonVariants()}>
         Catégories
       </Link>

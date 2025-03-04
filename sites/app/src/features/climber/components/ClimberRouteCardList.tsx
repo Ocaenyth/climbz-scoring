@@ -37,10 +37,10 @@ export const ClimberRouteCardList = ({
                 <CardTitle>{route.name}</CardTitle>
                 <CardDescription>Couloir {route.wall.number}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex space-x-1 flex-wrap">
                 <Button
                   key={"reset"}
-                  className="font-semibold"
+                  className="font-semibold h-16 text-[18px] my-1"
                   onClick={() => {
                     mutate({ routeId: route.id, maxZone: 0 });
                   }}
@@ -56,9 +56,12 @@ export const ClimberRouteCardList = ({
                         maxZone: zoneNumber,
                       })
                     }
-                    className={classNames("font-semibold", {
-                      "bg-green-500": zoneNumber <= currentMaxSuccesfulZone,
-                    })}
+                    className={classNames(
+                      "font-semibold h-16 w-16 text-[18px] my-1",
+                      {
+                        "bg-green-500": zoneNumber <= currentMaxSuccesfulZone,
+                      }
+                    )}
                   >
                     {zoneNumber !== route.zoneCount ? zoneNumber : "TOP"}
                   </Button>
