@@ -13,6 +13,11 @@ export const ClimberContestPage = () => {
   const { data } = useClimber(climberId);
   return (
     <div>
+      {data && (
+        <div className="text-center text-[40px]">
+          {data.firstName} {data.lastName} ({data.competitionCategory.name})
+        </div>
+      )}
       <ClimberRouteCardList climberId={climberId} />
     </div>
   );

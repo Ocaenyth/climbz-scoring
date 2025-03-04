@@ -1,12 +1,14 @@
 import { DataTable } from "@/components/ui/data-table";
-import { CompetitionCategory } from "@/features/competition-category/dto/CompetitionCategory";
-import { useCompetitionCategoryResults } from "@/features/competition-category/hooks/useCompetitionCategoryResults";
+import { Gender } from "@/features/climber/dto/Gender";
 import { ColumnDef } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
 import { CategoryResult } from "../dto/CategoryResult";
+import { ScratchCategory } from "../dto/ScratchCategory";
+import { useScratchCategoryResults } from "../hooks/useScratchCategoryResults";
 
-export interface CategoryResultsDataTableProps {
-  category: CompetitionCategory;
+export interface ScratchCategoryResultsDataTableProps {
+  scratchCategory: ScratchCategory;
+  gender: Gender;
 }
 
 const columns: ColumnDef<CategoryResult>[] = [
@@ -34,10 +36,11 @@ const columns: ColumnDef<CategoryResult>[] = [
   },
 ];
 
-export const CompetitionCategoryResultsDataTable = ({
-  category,
-}: CategoryResultsDataTableProps) => {
-  const { data } = useCompetitionCategoryResults(category.id);
+export const ScratchCategoryResultsDataTable = ({
+  scratchCategory,
+  gender,
+}: ScratchCategoryResultsDataTableProps) => {
+  const { data } = useScratchCategoryResults(scratchCategory, gender);
   return (
     data && (
       <div className="container mx-auto py-10">

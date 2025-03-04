@@ -7,8 +7,10 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
+import { Gender } from '@prisma/client';
 import { CompetitionCategoryService } from './competition-category.service';
 import { CreateCompetitionCategoryDto } from './dto/create-competition-category.dto';
+import { ScratchCategory } from './dto/scratch-category.enum';
 import { UpdateCompetitionCategoryDto } from './dto/update-competition-category.dto';
 
 @Controller('competition-categories')
@@ -51,5 +53,16 @@ export class CompetitionCategoryController {
   @Get(':id/results')
   computeCategoryResults(@Param('id') id: string) {
     return this.competitionCategoryService.computeCategoryResults(id);
+  }
+
+  @Get('scratch/:scratchCategory/:gender/results')
+  computeScratchResults(
+    @Param('scratchCategory') scratchCategory: ScratchCategory,
+    @Param('gender') gender: Gender,
+  ) {
+    return this.competitionCategoryService.computeScratchResults(
+      scratchCategory,
+      gender,
+    );
   }
 }

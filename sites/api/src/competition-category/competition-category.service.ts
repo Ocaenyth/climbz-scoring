@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { Gender } from '@prisma/client';
 import { climberSelect } from 'src/climber/climber.select';
 import { ClimberDto } from 'src/climber/dto/climber.dto';
 import { prisma } from 'src/prisma/client';
@@ -6,6 +7,7 @@ import { RouteDto } from 'src/route/dto/route.dto';
 import { routeSelect } from 'src/route/route.select';
 import { CompetitionCategoryResult } from './dto/competition-category-result.dto';
 import { CreateCompetitionCategoryDto } from './dto/create-competition-category.dto';
+import { ScratchCategory } from './dto/scratch-category.enum';
 import { UpdateCompetitionCategoryDto } from './dto/update-competition-category.dto';
 
 const TOTAL_POINTS_PER_ZONE = 1000;
@@ -43,10 +45,37 @@ export class CompetitionCategoryService {
   }
 
   async computeCategoryResults(competitionCategoryId: string) {
-    const climbers: ClimberDto[] = await prisma.climber.findMany({
-      where: { competitionCategoryId },
-      select: climberSelect,
-    });
+    return this.computeResults(
+      await prisma.climber.findMany({
+        where: { competitionCategoryId },
+        select: climberSelect,
+      }),
+    );
+  }
+
+  async computeScratchResults(
+    scratchCategory: ScratchCategory,
+    gender: Gender,
+  ) {
+    let ageComparison = null;
+    switch (scratchCategory) {
+      case ScratchCategory.YOUNG:
+        ageComparison = { competitionCategory: { maxAge: { lt: 18 } } };
+        break;
+      case ScratchCategory.ADULT:
+        ageComparison = { competitionCategory: { maxAge: { gte: 18 } } };
+        break;
+    }
+
+    return this.computeResults(
+      await prisma.climber.findMany({
+        where: { ...ageComparison, gender },
+        select: climberSelect,
+      }),
+    );
+  }
+
+  async computeResults(climbers: ClimberDto[]) {
     const routes: RouteDto[] = await prisma.route.findMany({
       select: routeSelect,
     });
@@ -58,7 +87,6 @@ export class CompetitionCategoryService {
         const successfulClimbers = climbers.filter((climber) => {
           const name = `${climber.firstName} ${climber.lastName}`;
           const currentZone = climber.successfulZones.find((successfulZone) => {
-            // console.log(`${name}: ${successfulZone.route.id} == ${route.id}`);
             return successfulZone.route.id == route.id;
           });
 
