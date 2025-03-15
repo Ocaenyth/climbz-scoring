@@ -9,6 +9,7 @@ export interface SuccessfulClimber {
 export interface Route {
   id: string;
   name: string;
+  displayOrder: number;
   zoneCount: number;
   successfulClimbers: SuccessfulClimber[];
   wall: Wall;
@@ -16,7 +17,8 @@ export interface Route {
 
 export const createRouteSchema = z.object({
   name: z.string(),
-  zoneCount: z.coerce.number(),
+  displayOrder: z.coerce.number().int(),
+  zoneCount: z.coerce.number().int(),
   wallId: z.string().uuid(),
 });
 export type CreateRoute = z.infer<typeof createRouteSchema>;

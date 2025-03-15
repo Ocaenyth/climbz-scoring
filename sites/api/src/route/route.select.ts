@@ -4,6 +4,7 @@ import { wallSummarySelect } from 'src/wall/wall.select';
 export const routeSummarySelect = {
   id: true,
   name: true,
+  displayOrder: true,
   zoneCount: true,
 } satisfies Prisma.RouteSelect;
 

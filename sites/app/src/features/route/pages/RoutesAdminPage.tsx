@@ -13,6 +13,10 @@ const columns: ColumnDef<Route>[] = [
     accessorKey: "id",
   },
   {
+    header: "Ordre d'affichage",
+    accessorKey: "displayOrder",
+  },
+  {
     header: "Nom",
     accessorKey: "name",
   },

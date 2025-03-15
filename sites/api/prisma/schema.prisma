@@ -57,6 +57,7 @@ model Route {
   @@unique([name])
   id   String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
   name String
+  displayOrder Int @default(0)
 
   wall   Wall   @relation(fields: [wallId], references: [id], onDelete: Cascade)
   wallId String @db.Uuid

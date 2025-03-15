@@ -4,6 +4,9 @@ export class CreateRouteDto {
   @IsString()
   name: string;
 
+  @IsInt()
+  displayOrder: number;
+
   @IsUUID()
   wallId: string;
 

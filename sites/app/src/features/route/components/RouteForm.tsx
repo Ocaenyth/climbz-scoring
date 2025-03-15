@@ -53,6 +53,25 @@ export const RouteForm = ({ onSubmit, defaultValues }: RouteFormProps) => {
         />
         <FormField
           control={form.control}
+          name="displayOrder"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Ordre d'affichage</FormLabel>
+              <FormControl>
+                <Input
+                  autoComplete="off"
+                  placeholder="Ordre d'affichage"
+                  type="number"
+                  {...field}
+                />
+              </FormControl>
+              <FormDescription />
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
           name="zoneCount"
           render={({ field }) => (
             <FormItem>
